@@ -1,0 +1,28 @@
+<div class="row">
+  <input name="searchInput" placeholder="Search" #searchInput="ngModel" [(ngModel)]="searchText">
+  <a id="createBtn" routerLink="create" class="btn btn-success">Create new departments</a>
+</div>
+<div class="container" >
+        <div class="row" >
+        <ng-container *ngFor="let department of departments | async" >
+<div *ngIf="filterCondition(department)" style="margin-right: 5%;">
+<div class="card col-12">
+        <i style="font-size: 200px;" class="fa fa-hospital-o fa-2x"></i>
+        <div class="card-body">
+          <h5 class="card-title">{{ department.name }}</h5>
+          <div class="dropdown">
+                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Open
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" (click)='editDepartment(department)'>Edit</a>
+                  <a class="dropdown-item" (click)='deleteDepartment(department)'>Delete</a>
+                </div>
+              </div>
+        </div>
+
+</div>
+</div>
+</ng-container>
+</div>
+</div>

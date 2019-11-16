@@ -1,0 +1,65 @@
+  
+<div class="row">
+        <div class="col-sm">
+        </div>
+      </div>
+      <form [formGroup]=" departmentForm">
+        <div class="jumbotron col-sm-8" style="margin:auto">
+                <h5>Department-Info</h5>
+          <div class="form-group row">
+            <label for="" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="name">
+              <div *ngIf="formSubmitted && departmentForm.get('name').errors"  class="invalid-error">
+                <div *ngIf="departmentForm.get('name').errors.required">Name is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-2 col-form-label">API Key</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" formControlName="APIkey">
+              <div *ngIf="formSubmitted && departmentForm.get('APIkey').errors"  class="invalid-error">
+                <div *ngIf="departmentForm.get('APIkey').errors.required">APIkey is required</div>
+              </div>
+            </div>
+            <h5>Department Contact Person</h5>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-2 col-form-label">name</label>
+            <div class="col-sm-10">
+                    <input type="text" class="form-control" formControlName="name">
+                    <div *ngIf="formSubmitted && departmentForm.get('name').errors"  class="invalid-error">
+                     <div *ngIf="departmentForm.get('name').errors.required">Name is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-2 col-form-label">email</label>
+            <div class="col-sm-10">
+                    <input type="text" class="form-control" formControlName="email">
+                    <div *ngIf="formSubmitted && departmentForm.get('email').errors"  class="invalid-error">
+                     <div *ngIf="departmentForm.get('email').errors.required">email is required</div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-sm-2 col-form-label">telephone</label>
+            <div class="col-sm-4">
+              <input type="text" appNumberonly class="form-control"  formControlName="telephone">
+              <div *ngIf="formSubmitted && departmentForm.get('telephone').errors"  class="invalid-error">
+                <div *ngIf=" departmentForm.get('telephone').errors.required">telephone is required</div>
+              </div>
+            </div>
+           
+          </div>
+          <div class="form-group row">&nbsp;</div>
+          <div class="form-group row">
+            <label for="" class="col-sm-2 col-form-label">&nbsp;</label>
+            <div class="col-sm-10">
+                <button type="button" class="btn btn-success fa fa-floppy-o" (click)="save($event)" >&nbsp;Save</button>&nbsp;
+                <button type="button" class="btn btn-light fa fa-ban" routerLink='/departments'>&nbsp;Cancel</button>
+            </div>
+          </div>
+        </div>
+      </form>
